@@ -46,6 +46,9 @@ def original(images, labels, num_classes, total_num_examples, devices=None, is_t
         with tf.control_dependencies([apply_gradient_op]):
             return tf.no_op(name='train')
 
+    for device in devices:
+        print(device, " ********** ")
+
     with tf.device(devices[0]):
         builder = ModelBuilder()
         print('num_classes: ' + str(num_classes))
@@ -105,7 +108,7 @@ def distribute(images, labels, num_classes, total_num_examples, devices, is_trai
 
     for device in devices:
         print(device, " ********** ")
-        
+
     with tf.device(devices[0]):
         builder = ModelBuilder()
         print('num_classes: ' + str(num_classes))
