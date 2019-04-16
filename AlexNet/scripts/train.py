@@ -130,8 +130,10 @@ def train(net_configname, batch_size, devices=None, target=None,
         if batch_num is None:
             batch_num = config[4]
 
+        print("-----------------------")
         with tf.device(devices[-1]):
             images, labels, num_classes = input_data(batch_size, batch_num)
+        print("+++++++++++++++++++++++")
 
         print('Input batch shape: images: {} labels: {}'.format(images.get_shape(),
                                                                 labels.get_shape()))
