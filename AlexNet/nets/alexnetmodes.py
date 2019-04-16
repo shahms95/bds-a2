@@ -55,7 +55,7 @@ def original(images, labels, num_classes, total_num_examples, devices=None, is_t
             return alexnet_eval(net, labels)
 
         global_step = builder.ensure_global_step()
-	print('total_num_examples: ' + str(total_num_examples))
+	    print('total_num_examples: ' + str(total_num_examples))
         train_op = train(total_loss, global_step, total_num_examples)
     return net, logits, total_loss, train_op, global_step
 
@@ -112,7 +112,7 @@ def distribute(images, labels, num_classes, total_num_examples, devices, is_trai
             return alexnet_eval(net, labels)
 
         global_step = builder.ensure_global_step()
-    print('total_num_examples: ' + str(total_num_examples))
+        print('total_num_examples: ' + str(total_num_examples))
         train_op = train(total_loss, global_step, total_num_examples)
     return net, logits, total_loss, train_op, global_step
 
