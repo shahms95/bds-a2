@@ -48,7 +48,7 @@ def original(images, labels, num_classes, total_num_examples, devices=None, is_t
 
     with tf.device(devices[0]):
         builder = ModelBuilder()
-	print('num_classes: ' + str(num_classes))
+        print('num_classes: ' + str(num_classes))
         net, logits, total_loss = alexnet_inference(builder, images, labels, num_classes)
 
         if not is_train:
@@ -105,7 +105,7 @@ def distribute(images, labels, num_classes, total_num_examples, devices, is_trai
 
     with tf.device(devices[0]):
         builder = ModelBuilder()
-    print('num_classes: ' + str(num_classes))
+        print('num_classes: ' + str(num_classes))
         net, logits, total_loss = alexnet_inference(builder, images, labels, num_classes)
 
         if not is_train:
