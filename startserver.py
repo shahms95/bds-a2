@@ -10,7 +10,7 @@ tf.logging.set_verbosity(tf.logging.DEBUG)
 
 clusterSpec_single = tf.train.ClusterSpec({
     "worker" : [
-        "localhost:2222"
+        "c220g5-110516.wisc.cloudlab.us:2222"
     ]
 })
 
