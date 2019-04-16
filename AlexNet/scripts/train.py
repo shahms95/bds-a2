@@ -121,10 +121,7 @@ def train(net_configname, batch_size, devices=None, target=None,
         input_data = benchmarks[benchmark_name]
 
         config = net_configs[net_configname]
-    
-        for device in devices:
-            print(device, "lolol")
-    
+        
         if devices is None:
             devices = config[1]
     
