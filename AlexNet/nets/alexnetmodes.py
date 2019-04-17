@@ -110,15 +110,14 @@ def distribute(images, labels, num_classes, total_num_examples, devices, is_trai
     for device in devices:
         print(device, " ********** ")
 
-    if FLAGS.job_name == "worker":
-        with tf.device(tf.train.replica_device_setter(worker_device = "/job:worker/task:%d" % FLAGS.task_index,cluster = clusterinfo)):        
-            builder = ModelBuilder()
-            print('num_classes: ' + str(num_classes))
-            # with tf.variable_scope("scope-{}".format(i)):
-            net, logits, total_loss = alexnet_inference(builder, images, labels, num_classes)
+    with tf.device(tf.train.replica_device_setter(worker_device = "/job:worker/task:%d" % FLAGS.task_index,cluster = clusterinfo)):        
+        builder = ModelBuilder()
+        print('num_classes: ' + str(num_classes))
+        # with tf.variable_scope("scope-{}".format(i)):
+        net, logits, total_loss = alexnet_inference(builder, images, labels, num_classes)
 
-            if not is_train:
-                return alexnet_eval(net, labels)
+        if not is_train:
+            return alexnet_eval(net, labels)
 
     # i=0
     # for device in devices[:-1]:
@@ -131,11 +130,10 @@ def distribute(images, labels, num_classes, total_num_examples, devices, is_trai
     #         if not is_train:
     #             return alexnet_eval(net, labels)
     #     i=i+1
-    elif FLAGS.job_name == "ps":
-        print('total_num_examples: ' + str(total_num_examples))
-        with tf.device(devices[-1]):
-            global_step = builder.ensure_global_step()
-            train_op = train(total_loss, global_step, total_num_examples)
+    print('total_num_examples: ' + str(total_num_examples))
+    with tf.device(devices[-1]):
+        global_step = builder.ensure_global_step()
+        train_op = train(total_loss, global_step, total_num_examples)
 
     return net, logits, total_loss, train_op, global_step
 
