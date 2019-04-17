@@ -124,10 +124,7 @@ def train(net_configname, batch_size, devices=None, target=None,
         
         if devices is None:
             devices = config[1]
-    
-        for device in devices:
-            print(device, "lolololol")
-    
+        
         if target is None:
             target = config[2]
         batch_size = config[3] * batch_size

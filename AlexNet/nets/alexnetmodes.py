@@ -8,7 +8,6 @@ from .common import ModelBuilder
 from .alexnetcommon import alexnet_inference, alexnet_part_conv, alexnet_loss, alexnet_eval
 from ..optimizers.momentumhybrid import HybridMomentumOptimizer
 
-FLAGS = tf.app.flags.FLAGS
 
 
 def original(images, labels, num_classes, total_num_examples, devices=None, is_train=True):
