@@ -17,7 +17,7 @@ clusterSpec_single = tf.train.ClusterSpec({
 
 clusterSpec_cluster = tf.train.ClusterSpec({
     "ps" : [
-        "localhost:2222"
+        "localhost:2223"
         # "c220g5-110516.wisc.cloudlab.us:2223"
     ],
     "worker" : [
@@ -28,7 +28,7 @@ clusterSpec_cluster = tf.train.ClusterSpec({
 
 clusterSpec_cluster2 = tf.train.ClusterSpec({
     "ps" : [
-        "localhost:2222"
+        "localhost:2223"
         # "c220g5-110516.wisc.cloudlab.us:2223"
     ],
     "worker" : [
