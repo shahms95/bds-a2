@@ -98,7 +98,7 @@ class ModelBuilder(object):
         """Create a variable"""
         with tf.device(self.variable_device()):
             var = tf.get_variable(self._variable_scope_stack + name,
-                                  shape, dtype=dtype, initializer=initializer,reuse=True)
+                                  shape, dtype=dtype, initializer=initializer)
             variable_summaries(var)
             return var
 
