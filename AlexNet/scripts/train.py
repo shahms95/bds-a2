@@ -227,7 +227,7 @@ if __name__ == '__main__':
     parser.add_argument("--model_dir",
                         help='directory for model checkpoints, defaults to WORK_DIR/model')
     parser.add_argument("--dataset", help='dataset to use', choices=['fake_data', 'flowers'],
-                        default='flowers')
+                        default='fake_data')
     parser.add_argument("--batch_num", help='total batch number', type=int)
     parser.add_argument("--batch_size", help='batch size', type=int,
                         default=128)
