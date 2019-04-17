@@ -109,15 +109,17 @@ def distribute(images, labels, num_classes, total_num_examples, devices, is_trai
     for device in devices:
         print(device, " ********** ")
 
+    i=0
     for device in devices[:-1]:
         with tf.device(device):
             builder = ModelBuilder()
             print('num_classes: ' + str(num_classes))
-            with tf.variable_scope(device[-6:]):
+            with tf.variable_scope("scope{}".format(i)):
                 net, logits, total_loss = alexnet_inference(builder, images, labels, num_classes)
 
             if not is_train:
                 return alexnet_eval(net, labels)
+        i=i+1
 
     with tf.device(devices[-1]):
         global_step = builder.ensure_global_step()
