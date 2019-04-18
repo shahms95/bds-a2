@@ -137,6 +137,7 @@ def distribute(images, labels, num_classes, total_num_examples, devices, is_trai
         num_replicas = 0
 
     i=0
+    global_step = builder.ensure_global_step()
     for device in devices[:-1]:
         with tf.device(device):
             # builder = ModelBuilder()
@@ -157,7 +158,6 @@ def distribute(images, labels, num_classes, total_num_examples, devices, is_trai
     
     
     with tf.device(devices[-1]):
-        global_step = builder.ensure_global_step()
         # train_op = train(total_loss, global_step, total_num_examples, num_replicas)
         # Apply gradients.
         with tf.control_dependencies([grads]):
