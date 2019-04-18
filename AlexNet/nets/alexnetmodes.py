@@ -131,28 +131,40 @@ def distribute(images, labels, num_classes, total_num_examples, devices, is_trai
 
     print("Value inside distribute function : {}".format(issync))
 
-    i=0
+    if issync:
+        num_replicas = len(devices)-1
+    else:
+        num_replicas = 0
 
+    i=0
     for device in devices[:-1]:
         with tf.device(device):
             # builder = ModelBuilder()
             # print('num_classes: ' + str(num_classes))
             with tf.variable_scope("scope-{}".format(i)):
                 net, logits, total_loss = alexnet_inference(builder, images_small[i], labels_small[i], num_classes)
-
+                with tf.control_dependencies([total_loss]):
+                    print("Value of num_replicas inside train function : {}".format(num_replicas))
+                    opt = configure_optimizer(global_step, total_num_steps)
+                    if num_replicas!=0:
+                        opt = tf.train.SyncReplicasOptimizer(opt, replicas_to_aggregate=num_replicas,total_num_replicas=num_replicas)
+                    grads = opt.compute_gradients(total_loss)
+                    
             if not is_train:
                 return alexnet_eval(net, labels)
         i=i+1
     print('total_num_examples: ' + str(total_num_examples))
     
-    if issync:
-        num_replicas = len(devices)-1
-    else:
-        num_replicas = 0
     
     with tf.device(devices[-1]):
         global_step = builder.ensure_global_step()
-        train_op = train(total_loss, global_step, total_num_examples, num_replicas)
+        # train_op = train(total_loss, global_step, total_num_examples, num_replicas)
+        # Apply gradients.
+        with tf.control_dependencies([grads]):
+            apply_gradient_op = opt.apply_gradients(grads, global_step=global_step)
+
+        with tf.control_dependencies([apply_gradient_op]):
+            tf.no_op(name='train')
 
     return net, logits, total_loss, train_op, global_step
 
