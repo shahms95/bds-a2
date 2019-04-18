@@ -149,8 +149,6 @@ def distribute(images, labels, num_classes, total_num_examples, devices, is_trai
                     opt = configure_optimizer(global_step, total_num_examples)
                     if num_replicas!=0:
                         opt = tf.train.SyncReplicasOptimizer(opt, replicas_to_aggregate=num_replicas,total_num_replicas=num_replicas)
-                        init_token_op = opt.get_init_tokens_op()
-                        chief_queue_runner = opt.get_chief_queue_runner()
                     grads = opt.compute_gradients(total_loss)
                     
             if not is_train:
@@ -164,6 +162,8 @@ def distribute(images, labels, num_classes, total_num_examples, devices, is_trai
         # Apply gradients.
         with tf.control_dependencies([grads]):
             apply_gradient_op = opt.apply_gradients(grads, global_step=global_step)
+            init_token_op = opt.get_init_tokens_op()
+            chief_queue_runner = opt.get_chief_queue_runner()
 
         with tf.control_dependencies([apply_gradient_op]):
             tf.no_op(name='train')
