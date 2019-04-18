@@ -161,10 +161,13 @@ def distribute(images, labels, num_classes, total_num_examples, devices, is_trai
         # train_op = train(total_loss, global_step, total_num_examples, num_replicas)
         # Apply gradients.
         print("------------------------- type(grads) = {} -------------".format(type(grads)))
-        with tf.control_dependencies([grads]):
-            apply_gradient_op = opt.apply_gradients(grads, global_step=global_step)
-            init_token_op = opt.get_init_tokens_op()
-            chief_queue_runner = opt.get_chief_queue_runner()
+        # with tf.control_dependencies([grads]):
+        #     apply_gradient_op = opt.apply_gradients(grads, global_step=global_step)
+        #     init_token_op = opt.get_init_tokens_op()
+        #     chief_queue_runner = opt.get_chief_queue_runner()
+        apply_gradient_op = opt.apply_gradients(grads, global_step=global_step)
+        init_token_op = opt.get_init_tokens_op()
+        chief_queue_runner = opt.get_chief_queue_runner()
 
         with tf.control_dependencies([apply_gradient_op]):
             tf.no_op(name='train')
