@@ -107,8 +107,8 @@ def distribute(images, labels, num_classes, total_num_examples, devices, is_trai
         with tf.control_dependencies([apply_gradient_op]):
             return tf.no_op(name='train')
 
-    for device in devices:
-        print(device, " ********** ")
+    # for device in devices:
+    #     print(device, " ********** ")
 
     # with tf.device(tf.train.replica_device_setter(worker_device = "/job:worker/task:%d" % FLAGS.task_index,cluster = clusterinfo)):        
     #     builder = ModelBuilder()
@@ -119,13 +119,19 @@ def distribute(images, labels, num_classes, total_num_examples, devices, is_trai
     #     if not is_train:
     #         return alexnet_eval(net, labels)
 
+    images_small = tf.split(images, len(devices)-1)
+    labels_small = tf.split(labels, len(devices)-1)
+    with tf.device(devices[0]):
+        builder = ModelBuilder()
+        print('num_classes: ' + str(num_classes))
+
     i=0
     for device in devices[:-1]:
         with tf.device(device):
-            builder = ModelBuilder()
-            print('num_classes: ' + str(num_classes))
+            # builder = ModelBuilder()
+            # print('num_classes: ' + str(num_classes))
             with tf.variable_scope("scope-{}".format(i)):
-                net, logits, total_loss = alexnet_inference(builder, images, labels, num_classes)
+                net, logits, total_loss = alexnet_inference(builder, images_small[i], labels_small[i], num_classes)
 
             if not is_train:
                 return alexnet_eval(net, labels)
