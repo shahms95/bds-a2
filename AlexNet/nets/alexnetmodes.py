@@ -147,7 +147,7 @@ def distribute(images, labels, num_classes, total_num_examples, devices, is_trai
     print('total_num_examples: ' + str(total_num_examples))
     
     if issync:
-        num_replicas = len(devices)
+        num_replicas = len(devices)-1
     else:
         num_replicas = 0
     
