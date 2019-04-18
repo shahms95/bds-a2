@@ -131,6 +131,7 @@ def distribute(images, labels, num_classes, total_num_examples, devices, is_trai
         num_replicas = 0
     with tf.device(devices[0]):
         builder = ModelBuilder()
+        global_step = builder.ensure_global_step()
         print('num_classes: ' + str(num_classes))
         opt = configure_optimizer(global_step, total_num_examples)
         if num_replicas!=0:
@@ -140,7 +141,6 @@ def distribute(images, labels, num_classes, total_num_examples, devices, is_trai
 
 
     i=0
-    global_step = builder.ensure_global_step()
     for device in devices[:-1]:
         task_index = device[-1]
         with tf.device(tf.train.replica_device_setter(worker_device=device)):
