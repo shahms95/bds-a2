@@ -11,30 +11,30 @@ tf.logging.set_verbosity(tf.logging.DEBUG)
 clusterSpec_single = tf.train.ClusterSpec({
     "worker" : [
         # "c220g5-120102.wisc.cloudlab.us:2222"
-        "localhost:2222"
+        "node0:2222"
     ]
 })
 
 clusterSpec_cluster = tf.train.ClusterSpec({
     "ps" : [
-        "localhost:2223"
+        "node0:2223"
         # "c220g5-120102.wisc.cloudlab.us:2223"
     ],
     "worker" : [
-        "c220g5-120118.wisc.cloudlab.us:2222",
-        "c220g5-120102.wisc.cloudlab.us:2222"
+        "node0:2222",
+        "node1:2222"
     ]
 })
 
 clusterSpec_cluster2 = tf.train.ClusterSpec({
     "ps" : [
-        "localhost:2223"
+        "node0:2223"
         # "c220g5-120102.wisc.cloudlab.us:2223"
     ],
     "worker" : [
-        "c220g5-120118.wisc.cloudlab.us:2222",
-        "c220g5-120102.wisc.cloudlab.us:2222",
-        "c220g5-120106.wisc.cloudlab.us:2222"
+        "node0:2222",
+        "node1:2222",
+        "node2:2222"
     ]
 })
 
