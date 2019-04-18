@@ -160,6 +160,7 @@ def distribute(images, labels, num_classes, total_num_examples, devices, is_trai
     with tf.device(devices[-1]):
         # train_op = train(total_loss, global_step, total_num_examples, num_replicas)
         # Apply gradients.
+        print("------------------------- type(grads) = {} -------------".format(type(grads)))
         with tf.control_dependencies([grads]):
             apply_gradient_op = opt.apply_gradients(grads, global_step=global_step)
             init_token_op = opt.get_init_tokens_op()
