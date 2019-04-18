@@ -146,7 +146,7 @@ def distribute(images, labels, num_classes, total_num_examples, devices, is_trai
                 net, logits, total_loss = alexnet_inference(builder, images_small[i], labels_small[i], num_classes)
                 with tf.control_dependencies([total_loss]):
                     print("Value of num_replicas inside train function : {}".format(num_replicas))
-                    opt = configure_optimizer(global_step, total_num_steps)
+                    opt = configure_optimizer(global_step, total_num_examples)
                     if num_replicas!=0:
                         opt = tf.train.SyncReplicasOptimizer(opt, replicas_to_aggregate=num_replicas,total_num_replicas=num_replicas)
                     grads = opt.compute_gradients(total_loss)
