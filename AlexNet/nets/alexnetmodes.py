@@ -34,11 +34,13 @@ def original(images, labels, num_classes, total_num_examples, devices=None, is_t
             'biases': lparam(exp_decay(0.002, 10, 2), 0.9),
         })
 
-    def train(total_loss, global_step, total_num_steps):
+    def train(total_loss, global_step, total_num_steps, num_replicas):
         """Build train operations"""
         # Compute gradients
         with tf.control_dependencies([total_loss]):
             opt = configure_optimizer(global_step, total_num_steps)
+            opt = tf.train.SyncReplicasOptimizer(opt, replicas_to_aggregate=num_replicas,total_num_replicas=num_replicas)
+
             grads = opt.compute_gradients(total_loss)
 
         # Apply gradients.
@@ -60,7 +62,7 @@ def original(images, labels, num_classes, total_num_examples, devices=None, is_t
 
         global_step = builder.ensure_global_step()
         print('total_num_examples: ' + str(total_num_examples))
-        train_op = train(total_loss, global_step, total_num_examples)
+    train_op = train(total_loss, global_step, total_num_examples, len(devices))
     return net, logits, total_loss, train_op, global_step
 
 
