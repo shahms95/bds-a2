@@ -125,16 +125,19 @@ def distribute(images, labels, num_classes, total_num_examples, devices, is_trai
 
     images_small = tf.split(images, len(devices)-1)
     labels_small = tf.split(labels, len(devices)-1)
-    with tf.device(devices[0]):
-        builder = ModelBuilder()
-        print('num_classes: ' + str(num_classes))
-
-    print("Value inside distribute function : {}".format(issync))
-
     if issync:
         num_replicas = len(devices)-1
     else:
         num_replicas = 0
+    with tf.device(devices[0]):
+        builder = ModelBuilder()
+        print('num_classes: ' + str(num_classes))
+        opt = configure_optimizer(global_step, total_num_examples)
+        if num_replicas!=0:
+            opt = tf.train.SyncReplicasOptimizer(opt, replicas_to_aggregate=num_replicas,total_num_replicas=num_replicas)
+
+    print("Value inside distribute function : {}".format(issync))
+
 
     i=0
     global_step = builder.ensure_global_step()
@@ -147,9 +150,6 @@ def distribute(images, labels, num_classes, total_num_examples, devices, is_trai
                 net, logits, total_loss = alexnet_inference(builder, images_small[i], labels_small[i], num_classes)
                 with tf.control_dependencies([total_loss]):
                     print("Value of num_replicas inside train function : {}".format(num_replicas))
-                    opt = configure_optimizer(global_step, total_num_examples)
-                    if num_replicas!=0:
-                        opt = tf.train.SyncReplicasOptimizer(opt, replicas_to_aggregate=num_replicas,total_num_replicas=num_replicas)
                     grads = opt.compute_gradients(total_loss)
                     
             if not is_train:
