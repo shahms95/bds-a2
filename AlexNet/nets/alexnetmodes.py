@@ -139,7 +139,7 @@ def distribute(images, labels, num_classes, total_num_examples, devices, is_trai
     i=0
     global_step = builder.ensure_global_step()
     for device in devices[:-1]:
-        with tf.device(device):
+        with tf.device(tf.train.replica_device_setter(worker_device=device)):
             # builder = ModelBuilder()
             # print('num_classes: ' + str(num_classes))
             with tf.variable_scope("scope-{}".format(i)):
@@ -149,6 +149,8 @@ def distribute(images, labels, num_classes, total_num_examples, devices, is_trai
                     opt = configure_optimizer(global_step, total_num_examples)
                     if num_replicas!=0:
                         opt = tf.train.SyncReplicasOptimizer(opt, replicas_to_aggregate=num_replicas,total_num_replicas=num_replicas)
+                        init_token_op = optimizer.get_init_tokens_op()
+                        chief_queue_runner = optimizer.get_chief_queue_runner()
                     grads = opt.compute_gradients(total_loss)
                     
             if not is_train:
