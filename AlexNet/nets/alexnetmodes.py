@@ -103,7 +103,6 @@ def distribute(images, labels, num_classes, total_num_examples, devices, is_trai
             opt = configure_optimizer(global_step, total_num_steps)
             if num_replicas!=0:
                 opt = tf.train.SyncReplicasOptimizer(opt, replicas_to_aggregate=num_replicas,total_num_replicas=num_replicas)
-
             grads = opt.compute_gradients(total_loss)
 
         # Apply gradients.
