@@ -99,6 +99,7 @@ def distribute(images, labels, num_classes, total_num_examples, devices, is_trai
         """Build train operations"""
         # Compute gradients
         with tf.control_dependencies([total_loss]):
+            print("Value of num_replicas inside train function : ".format(num_replicas))
             opt = configure_optimizer(global_step, total_num_steps)
             if num_replicas!=0:
                 opt = tf.train.SyncReplicasOptimizer(opt, replicas_to_aggregate=num_replicas,total_num_replicas=num_replicas)
@@ -129,7 +130,7 @@ def distribute(images, labels, num_classes, total_num_examples, devices, is_trai
         builder = ModelBuilder()
         print('num_classes: ' + str(num_classes))
 
-    print("Training with issync value : {}".format(issync))
+    print("Value inside distribute function : {}".format(issync))
 
     i=0
 

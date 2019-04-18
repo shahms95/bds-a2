@@ -137,6 +137,7 @@ def train(net_configname, batch_size, devices=None, target=None,
         print('Input batch shape: images: {} labels: {}'.format(images.get_shape(),
                                                                 labels.get_shape()))
 
+        print("Value jsut before calling alexnetmodes {}".format(issync))
         if net_configname == "single":
             (net, logprob, total_loss,train_op, global_step) = alexnetmodes.original(images, labels, num_classes,batch_num * batch_size, devices)
         else:
@@ -253,6 +254,8 @@ if __name__ == '__main__':
         issync = True
     else:
         issync = False
+
+    print("Value in main function {}".format(issync))
     if args.redirect_outerr:
         with open(out_file, 'w') as f, misc.stdout_redirected(f):
             with open(err_file, 'w') as f, misc.stdout_redirected(f, stdout=sys.stderr):
