@@ -174,9 +174,9 @@ def distribute(images, labels, num_classes, total_num_examples, devices, is_trai
         task_index = devices[-1][-1]
         sv = tf.train.Supervisor(is_chief=(task_index==0),init_op=init,summary_op=None, global_step=global_step)
         sess = sv.prepare_or_wait_for_session(server.target)
-            if task_index == 0:
-                sv.start_queue_runners(sess, [chief_queue_runner])
-                sess.run(init_token_op)
+        if task_index == 0:
+            sv.start_queue_runners(sess, [chief_queue_runner])
+            sess.run(init_token_op)
 
         with tf.control_dependencies([apply_gradient_op]):
             train_op = tf.no_op(name='train')
