@@ -21,8 +21,8 @@ clusterSpec_cluster = tf.train.ClusterSpec({
         # "c220g5-120102.wisc.cloudlab.us:2223"
     ],
     "worker" : [
-        "c220g5-120102.wisc.cloudlab.us:2222",
-        "c220g5-120118.wisc.cloudlab.us:2222"
+        "c220g5-120118.wisc.cloudlab.us:2222",
+        "c220g5-120102.wisc.cloudlab.us:2222"
     ]
 })
 
@@ -32,9 +32,9 @@ clusterSpec_cluster2 = tf.train.ClusterSpec({
         # "c220g5-120102.wisc.cloudlab.us:2223"
     ],
     "worker" : [
-        "c220g5-120102.wisc.cloudlab.us:2222",
         "c220g5-120118.wisc.cloudlab.us:2222",
-        "c220g5-120106.wisc.cloudlab.us:2222",
+        "c220g5-120102.wisc.cloudlab.us:2222",
+        "c220g5-120106.wisc.cloudlab.us:2222"
     ]
 })
 
