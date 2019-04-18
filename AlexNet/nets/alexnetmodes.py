@@ -170,7 +170,7 @@ def distribute(images, labels, num_classes, total_num_examples, devices, is_trai
         chief_queue_runner = opt.get_chief_queue_runner()
 
         with tf.control_dependencies([apply_gradient_op]):
-            tf.no_op(name='train')
+            train_op = tf.no_op(name='train')
 
     return net, logits, total_loss, train_op, global_step
 
