@@ -139,6 +139,7 @@ def distribute(images, labels, num_classes, total_num_examples, devices, is_trai
     i=0
     global_step = builder.ensure_global_step()
     for device in devices[:-1]:
+        task_index = device[-1]
         with tf.device(tf.train.replica_device_setter(worker_device=device)):
             # builder = ModelBuilder()
             # print('num_classes: ' + str(num_classes))
@@ -156,7 +157,7 @@ def distribute(images, labels, num_classes, total_num_examples, devices, is_trai
         i=i+1
     print('total_num_examples: ' + str(total_num_examples))
     
-    
+    #TODO : add code about sv; check Fayi's part2.py for help
     with tf.device(devices[-1]):
         # train_op = train(total_loss, global_step, total_num_examples, num_replicas)
         # Apply gradients.
@@ -166,8 +167,15 @@ def distribute(images, labels, num_classes, total_num_examples, devices, is_trai
         #     init_token_op = opt.get_init_tokens_op()
         #     chief_queue_runner = opt.get_chief_queue_runner()
         apply_gradient_op = opt.apply_gradients(grads, global_step=global_step)
+
         init_token_op = opt.get_init_tokens_op()
         chief_queue_runner = opt.get_chief_queue_runner()
+        init = tf.global_variables_initializer()
+        sv = tf.train.Supervisor(is_chief=(FLAGS.task_index==0),init_op=init,summary_op=None, global_step=global_step)
+        sess = sv.prepare_or_wait_for_session(server.target)
+            if FLAGS.task_index == 0:
+                sv.start_queue_runners(sess, [chief_queue_runner])
+                sess.run(init_token_op)
 
         with tf.control_dependencies([apply_gradient_op]):
             train_op = tf.no_op(name='train')
