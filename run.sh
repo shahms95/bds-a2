@@ -1,5 +1,5 @@
 #!/bin/bash
-export TF_LOG_DIR="tf/tblogs/"
+export TF_LOG_DIR="tf/tblogs/$1"
 # run a simple program that generates logs for tensorboard
 # mkdir -p $TF_LOG_DIR
 terminate_cluster
