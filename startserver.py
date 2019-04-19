@@ -16,20 +16,20 @@ clusterSpec_single = tf.train.ClusterSpec({
 
 clusterSpec_cluster = tf.train.ClusterSpec({
     "ps" : [
-        "node0:2223"
+        "node0:2222"
     ],
     "worker" : [
-        "node0:2222",
+        "node0:2223",
         "node1:2222"
     ]
 })
 
 clusterSpec_cluster2 = tf.train.ClusterSpec({
     "ps" : [
-        "node0:2223"
+        "node0:2222"
     ],
     "worker" : [
-        "node0:2222",
+        "node0:2223",
         "node1:2222",
         "node2:2222"
     ]
