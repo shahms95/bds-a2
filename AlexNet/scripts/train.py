@@ -106,7 +106,7 @@ def evaluate(net_configname, batch_size, devices=None, target=None,
 
 
 def train(net_configname, batch_size, devices=None, target=None,
-          batch_num=None, tb_dir=None, train_dir=None, benchmark_name=None, issync= False):
+          batch_num=None, tb_dir=None, train_dir=None, benchmark_name=None):
     with tf.Graph().as_default():
         if tb_dir is None:
             tb_dir = '/tmp/workspace/tflogs'
@@ -137,11 +137,11 @@ def train(net_configname, batch_size, devices=None, target=None,
         print('Input batch shape: images: {} labels: {}'.format(images.get_shape(),
                                                                 labels.get_shape()))
 
-        print("Value just before calling alexnetmodes {}".format(issync))
+        # print("Value just before calling alexnetmodes {}".format(issync))
         if net_configname == "single":
             (net, logprob, total_loss,train_op, global_step) = alexnetmodes.original(images, labels, num_classes,batch_num * batch_size, devices)
         else:
-            (net, logprob, total_loss,train_op, global_step) = alexnetmodes.distribute(images, labels, num_classes,batch_num * batch_size, devices, issync=issync)
+            (net, logprob, total_loss,train_op, global_step) = alexnetmodes.distribute(images, labels, num_classes,batch_num * batch_size, devices)
 
         tfhelper.scalar_summary('total_loss', total_loss)
         summary_op = tfhelper.merge_all_summaries()
@@ -235,8 +235,8 @@ if __name__ == '__main__':
                         action="store_true")
     parser.add_argument('--eval', help='evaluation or train',
                         action="store_true")
-    parser.add_argument('--sync', help='Activates Sync training',
-                        action="store_true")
+    # parser.add_argument('--sync', help='Activates Sync training',
+    #                     action="store_true")
     args = parser.parse_args()
     if not os.path.exists(args.work_dir):
         os.makedirs(args.work_dir)
@@ -250,12 +250,12 @@ if __name__ == '__main__':
 
     out_file = os.path.join(args.work_dir, 'out.log')
     err_file = os.path.join(args.work_dir, 'err.log')
-    if args.sync:
-        issync = True
-    else:
-        issync = False
+    # if args.sync:
+    #     issync = True
+    # else:
+    #     issync = False
 
-    print("Value in main function {}".format(issync))
+    # print("Value in main function {}".format(issync))
     if args.redirect_outerr:
         with open(out_file, 'w') as f, misc.stdout_redirected(f):
             with open(err_file, 'w') as f, misc.stdout_redirected(f, stdout=sys.stderr):
@@ -265,11 +265,11 @@ if __name__ == '__main__':
                 else:
                     train(args.mode, tb_dir=args.log_dir, train_dir=args.model_dir,
                           benchmark_name=args.dataset, batch_num=args.batch_num,
-                          batch_size=args.batch_size, issync=issync)
+                          batch_size=args.batch_size)
     else:
         if args.eval:
             evaluate(args.mode, tb_dir=args.log_dir, train_dir=args.model_dir,
                      benchmark_name=args.dataset, batch_size=args.batch_size)
         else:
             train(args.mode, tb_dir=args.log_dir, train_dir=args.model_dir,
-                  benchmark_name=args.dataset, batch_num=args.batch_num, batch_size=args.batch_size, issync=issync)
+                  benchmark_name=args.dataset, batch_num=args.batch_num, batch_size=args.batch_size)

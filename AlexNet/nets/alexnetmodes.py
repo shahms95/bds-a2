@@ -65,7 +65,7 @@ def original(images, labels, num_classes, total_num_examples, devices=None, is_t
     return net, logits, total_loss, train_op, global_step
 
 
-def distribute(images, labels, num_classes, total_num_examples, devices, is_train=True, issync=False):
+def distribute(images, labels, num_classes, total_num_examples, devices, is_train=True):
     # Put your code here
     # You can refer to the "original" function above, it is for the single-node version.
     # 1. Create global steps on the parameter server node. You can use the same method that the single-machine program uses.
@@ -95,14 +95,12 @@ def distribute(images, labels, num_classes, total_num_examples, devices, is_trai
             'biases': lparam(exp_decay(0.002, 10, 2), 0.9),
         })
 
-    def train(total_loss, global_step, total_num_steps, num_replicas=0):
+    def train(total_loss, global_step, total_num_steps):
         """Build train operations"""
         # Compute gradients
         with tf.control_dependencies([total_loss]):
             print("Value of num_replicas inside train function : {}".format(num_replicas))
             opt = configure_optimizer(global_step, total_num_steps)
-            if num_replicas!=0:
-                opt = tf.train.SyncReplicasOptimizer(opt, replicas_to_aggregate=num_replicas,total_num_replicas=num_replicas)
             grads = opt.compute_gradients(total_loss)
 
         # Apply gradients.
@@ -125,10 +123,10 @@ def distribute(images, labels, num_classes, total_num_examples, devices, is_trai
 
     images_small = tf.split(images, len(devices)-1)
     labels_small = tf.split(labels, len(devices)-1)
-    if issync:
-        num_replicas = len(devices)-1
-    else:
-        num_replicas = 0
+    # if issync:
+    #     num_replicas = len(devices)-1
+    # else:
+    #     num_replicas = 0
     with tf.device(devices[0]):
         builder = ModelBuilder()
         global_step = builder.ensure_global_step()
@@ -143,13 +141,14 @@ def distribute(images, labels, num_classes, total_num_examples, devices, is_trai
     i=0
     for device in devices[:-1]:
         task_index = device[-1]
-        with tf.device(tf.train.replica_device_setter(worker_device=device)):
+        # with tf.device(tf.train.replica_device_setter(worker_device=device)):
+        with tf.device(device):
             # builder = ModelBuilder()
             # print('num_classes: ' + str(num_classes))
             with tf.variable_scope("scope-{}".format(i)):
                 net, logits, total_loss = alexnet_inference(builder, images_small[i], labels_small[i], num_classes)
                 with tf.control_dependencies([total_loss]):
-                    print("Value of num_replicas inside train function : {}".format(num_replicas))
+                    # print("Value of num_replicas inside train function : {}".format(num_replicas))
                     grads = opt.compute_gradients(total_loss)
                     gradients_all.append(grads)
 
@@ -167,7 +166,7 @@ def distribute(images, labels, num_classes, total_num_examples, devices, is_trai
         #     apply_gradient_op = opt.apply_gradients(grads, global_step=global_step)
         #     init_token_op = opt.get_init_tokens_op()
         #     chief_queue_runner = opt.get_chief_queue_runner()
-        
+
         for grad in gradients_all:
             apply_gradient_op = opt.apply_gradients(grad, global_step=global_step)
 
