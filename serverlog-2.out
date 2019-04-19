@@ -1,8 +1,13 @@
 nohup: ignoring input
-2019-04-19 10:29:09.213190: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
-2019-04-19 10:29:09.242344: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2194835000 Hz
-2019-04-19 10:29:09.245526: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x35207d0 executing computations on platform Host. Devices:
-2019-04-19 10:29:09.245550: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
-2019-04-19 10:29:09.247902: I tensorflow/core/distributed_runtime/rpc/grpc_channel.cc:252] Initialize GrpcChannelCache for job ps -> {0 -> node0:2222}
-2019-04-19 10:29:09.247932: I tensorflow/core/distributed_runtime/rpc/grpc_channel.cc:252] Initialize GrpcChannelCache for job worker -> {0 -> node0:2223, 1 -> node1:2222, 2 -> localhost:2222}
-2019-04-19 10:29:09.252582: I tensorflow/core/distributed_runtime/rpc/grpc_server_lib.cc:391] Started server with target: grpc://localhost:2222
+2019-04-19 12:12:58.939108: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
+2019-04-19 12:12:58.967405: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2194835000 Hz
+2019-04-19 12:12:58.970477: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x4577650 executing computations on platform Host. Devices:
+2019-04-19 12:12:58.970511: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
+E0419 12:12:58.973345312   49222 server_chttp2.cc:40]        {"created":"@1555693978.973213232","description":"No address added out of total 1 resolved","file":"external/grpc/src/core/ext/transport/chttp2/server/chttp2_server.cc","file_line":349,"referenced_errors":[{"created":"@1555693978.973208026","description":"Failed to add any wildcard listeners","file":"external/grpc/src/core/lib/iomgr/tcp_server_posix.cc","file_line":324,"referenced_errors":[{"created":"@1555693978.973185603","description":"Unable to configure socket","fd":5,"file":"external/grpc/src/core/lib/iomgr/tcp_server_utils_posix_common.cc","file_line":217,"referenced_errors":[{"created":"@1555693978.973180830","description":"OS Error","errno":98,"file":"external/grpc/src/core/lib/iomgr/tcp_server_utils_posix_common.cc","file_line":190,"os_error":"Address already in use","syscall":"bind"}]},{"created":"@1555693978.973207172","description":"Unable to configure socket","fd":5,"file":"external/grpc/src/core/lib/iomgr/tcp_server_utils_posix_common.cc","file_line":217,"referenced_errors":[{"created":"@1555693978.973200461","description":"OS Error","errno":98,"file":"external/grpc/src/core/lib/iomgr/tcp_server_utils_posix_common.cc","file_line":190,"os_error":"Address already in use","syscall":"bind"}]}]}]}
+2019-04-19 12:12:58.973416: E tensorflow/core/distributed_runtime/rpc/grpc_server_lib.cc:466] Unknown: Could not start gRPC server
+Traceback (most recent call last):
+  File "startserver.py", line 45, in <module>
+    server = tf.train.Server(clusterinfo, job_name=FLAGS.job_name, task_index=FLAGS.task_index)
+  File "/usr/local/lib/python2.7/dist-packages/tensorflow/python/training/server_lib.py", line 148, in __init__
+    self._server = c_api.TF_NewServer(self._server_def.SerializeToString())
+tensorflow.python.framework.errors_impl.UnknownError: Could not start gRPC server
