@@ -1,5 +1,5 @@
 #!/bin/bash
-export TF_LOG_DIR="tf/log/"
+export TF_LOG_DIR="tf/mylogs/"
 
 # run a simple program that generates logs for tensorboard
 # mkdir -p ~/tf/log
