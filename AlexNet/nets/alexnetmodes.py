@@ -134,12 +134,12 @@ def distribute(images, labels, num_classes, total_num_examples, devices, is_trai
         global_step = builder.ensure_global_step()
         print('num_classes: ' + str(num_classes))
         opt = configure_optimizer(global_step, total_num_examples)
-        if num_replicas!=0:
-            opt = tf.train.SyncReplicasOptimizer(opt, replicas_to_aggregate=num_replicas,total_num_replicas=num_replicas)
+        # if num_replicas!=0:
+        #     opt = tf.train.SyncReplicasOptimizer(opt, replicas_to_aggregate=num_replicas,total_num_replicas=num_replicas)
 
     print("Value inside distribute function : {}".format(issync))
 
-
+    gradients_all = []
     i=0
     for device in devices[:-1]:
         task_index = device[-1]
@@ -151,7 +151,8 @@ def distribute(images, labels, num_classes, total_num_examples, devices, is_trai
                 with tf.control_dependencies([total_loss]):
                     print("Value of num_replicas inside train function : {}".format(num_replicas))
                     grads = opt.compute_gradients(total_loss)
-                    
+                    gradients_all.append(grads)
+
             if not is_train:
                 return alexnet_eval(net, labels)
         i=i+1
@@ -166,17 +167,19 @@ def distribute(images, labels, num_classes, total_num_examples, devices, is_trai
         #     apply_gradient_op = opt.apply_gradients(grads, global_step=global_step)
         #     init_token_op = opt.get_init_tokens_op()
         #     chief_queue_runner = opt.get_chief_queue_runner()
-        apply_gradient_op = opt.apply_gradients(grads, global_step=global_step)
+        
+        for grad in gradients_all:
+            apply_gradient_op = opt.apply_gradients(grad, global_step=global_step)
 
-        init_token_op = opt.get_init_tokens_op()
-        chief_queue_runner = opt.get_chief_queue_runner()
-        init = tf.global_variables_initializer()
-        task_index = devices[-1][-1]
-        sv = tf.train.Supervisor(is_chief=(task_index==0),init_op=init,summary_op=None, global_step=global_step)
-        sess = sv.prepare_or_wait_for_session(server.target)
-        if task_index == 0:
-            sv.start_queue_runners(sess, [chief_queue_runner])
-            sess.run(init_token_op)
+        # init_token_op = opt.get_init_tokens_op()
+        # chief_queue_runner = opt.get_chief_queue_runner()
+        # init = tf.global_variables_initializer()
+        # task_index = devices[-1][-1]
+        # sv = tf.train.Supervisor(is_chief=(task_index==0),init_op=init,summary_op=None, global_step=global_step)
+        # sess = sv.prepare_or_wait_for_session(server.target)
+        # if task_index == 0:
+            # sv.start_queue_runners(sess, [chief_queue_runner])
+            # sess.run(init_token_op)
 
         with tf.control_dependencies([apply_gradient_op]):
             train_op = tf.no_op(name='train')
