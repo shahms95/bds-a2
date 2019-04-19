@@ -141,8 +141,8 @@ def distribute(images, labels, num_classes, total_num_examples, devices, is_trai
     i=0
     for device in devices[:-1]:
         task_index = device[-1]
-        # with tf.device(tf.train.replica_device_setter(worker_device=device)):
-        with tf.device(device):
+        with tf.device(tf.train.replica_device_setter(worker_device=device)):
+        # with tf.device(device):
             print("------------------------- Device = {} -------------".format(device))
             # builder = ModelBuilder()
             # print('num_classes: ' + str(num_classes))
