@@ -137,7 +137,6 @@ def train(net_configname, batch_size, devices=None, target=None,
         print('Input batch shape: images: {} labels: {}'.format(images.get_shape(),
                                                                 labels.get_shape()))
 
-        # print("Value just before calling alexnetmodes {}".format(issync))
         if net_configname == "single":
             (net, logprob, total_loss,train_op, global_step) = alexnetmodes.original(images, labels, num_classes,batch_num * batch_size, devices)
         else:
@@ -235,8 +234,6 @@ if __name__ == '__main__':
                         action="store_true")
     parser.add_argument('--eval', help='evaluation or train',
                         action="store_true")
-    # parser.add_argument('--sync', help='Activates Sync training',
-    #                     action="store_true")
     args = parser.parse_args()
     if not os.path.exists(args.work_dir):
         os.makedirs(args.work_dir)
@@ -250,12 +247,6 @@ if __name__ == '__main__':
 
     out_file = os.path.join(args.work_dir, 'out.log')
     err_file = os.path.join(args.work_dir, 'err.log')
-    # if args.sync:
-    #     issync = True
-    # else:
-    #     issync = False
-
-    # print("Value in main function {}".format(issync))
     if args.redirect_outerr:
         with open(out_file, 'w') as f, misc.stdout_redirected(f):
             with open(err_file, 'w') as f, misc.stdout_redirected(f, stdout=sys.stderr):

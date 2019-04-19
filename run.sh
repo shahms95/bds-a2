@@ -1,7 +1,7 @@
 #!/bin/bash
 export TF_LOG_DIR="tf/tblogs/$1"
 # run a simple program that generates logs for tensorboard
-# mkdir -p $TF_LOG_DIR
+mkdir -p $TF_LOG_DIR
 terminate_cluster
 ./startservers.sh $1
 python -m AlexNet.scripts.train --mode $1 --log_dir $TF_LOG_DIR

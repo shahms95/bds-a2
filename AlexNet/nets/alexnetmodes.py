@@ -114,15 +114,17 @@ def distribute(images, labels, num_classes, total_num_examples, devices, is_trai
         print('num_classes: ' + str(num_classes))
         opt = configure_optimizer(global_step, total_num_examples)
 
+    net_all, logits_all, total_loss_all = [], [], []
     gradients_all = []
     i=0
     for device in devices[:-1]:
         task_index = device[-1]
         with tf.device(tf.train.replica_device_setter(worker_device=device)):
-        # with tf.device(device):
-            print("------------------------- Device = {} -------------".format(device))
             with tf.variable_scope("scope-{}".format(i)):
                 net, logits, total_loss = alexnet_inference(builder, images_small[i], labels_small[i], num_classes)
+                net_all.append(net)
+                logits_all.append(logits)
+                total_loss_all.append(total_loss)
                 with tf.control_dependencies([total_loss]):
                     grads = opt.compute_gradients(total_loss)
                     gradients_all.append(grads)
@@ -134,11 +136,13 @@ def distribute(images, labels, num_classes, total_num_examples, devices, is_trai
     
     with tf.device(devices[-1]):
         # Apply gradients.
-        print("------------------------- Device = {} -------------".format(devices[-1]))
         for grad in gradients_all:
             apply_gradient_op = opt.apply_gradients(grad, global_step=global_step)
 
         with tf.control_dependencies([apply_gradient_op]):
             train_op = tf.no_op(name='train')
+        net_mean = tf.reduce_mean(net_all)
+        logits_mean = tf.reduce_mean(logits_all)
+        total_loss_mean = tf.reduce_mean(total_loss_all)
 
-    return net, logits, total_loss, train_op, global_step
+    return net_mean, logits_mean, total_loss_mean, train_op, global_step
