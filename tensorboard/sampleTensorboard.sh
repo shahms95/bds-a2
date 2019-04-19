@@ -2,7 +2,7 @@
 export TF_LOG_DIR="tf/log/"
 
 # run a simple program that generates logs for tensorboard
-mkdir -p ~/tf/log
+# mkdir -p ~/tf/log
 python exampleTensorboard.py
 
 # start the tensorboard web server. If you have started the webserver on the VM
