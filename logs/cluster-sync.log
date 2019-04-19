@@ -1,0 +1,65 @@
+
+WARNING: The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+If you depend on functionality not listed there, please file an issue.
+
+Input batch shape: images: (256, 256, 256, 3) labels: (256,)
+num_classes: 1000
+------------------------- Device = /job:worker/task:0 -------------
+------------------------- Device = /job:worker/task:1 -------------
+total_num_examples: 12288
+------------------------- Device = /job:ps/task:0 -------------
+fake_data/input_producer/FIFOQueueV2
+fake_data/input_producer_1/FIFOQueueV2
+4 threads started for queue
+2019-04-19 10:09:47.828819: step 0, loss = 13.09 (56.6 examples/sec; 4.523 sec/batch)
+2019-04-19 10:09:52.987847: step 1, loss = 3.91 (63.2 examples/sec; 4.051 sec/batch)
+2019-04-19 10:09:57.058095: step 2, loss = 3.91 (63.0 examples/sec; 4.063 sec/batch)
+2019-04-19 10:10:01.031269: step 3, loss = 3.91 (64.5 examples/sec; 3.967 sec/batch)
+2019-04-19 10:10:05.084162: step 4, loss = 3.91 (63.3 examples/sec; 4.046 sec/batch)
+2019-04-19 10:10:09.058336: step 5, loss = 3.91 (64.5 examples/sec; 3.968 sec/batch)
+2019-04-19 10:10:13.002828: step 6, loss = 3.91 (65.0 examples/sec; 3.938 sec/batch)
+2019-04-19 10:10:16.888801: step 7, loss = 3.91 (65.9 examples/sec; 3.882 sec/batch)
+2019-04-19 10:10:20.804622: step 8, loss = 3.91 (65.5 examples/sec; 3.909 sec/batch)
+2019-04-19 10:10:24.725857: step 9, loss = 3.91 (65.4 examples/sec; 3.915 sec/batch)
+2019-04-19 10:10:28.853795: step 10, loss = 3.91 (62.1 examples/sec; 4.121 sec/batch)
+2019-04-19 10:10:32.838255: step 11, loss = 3.91 (64.4 examples/sec; 3.978 sec/batch)
+2019-04-19 10:10:37.003479: step 12, loss = 3.91 (61.5 examples/sec; 4.161 sec/batch)
+2019-04-19 10:10:40.956379: step 13, loss = 3.91 (64.9 examples/sec; 3.946 sec/batch)
+2019-04-19 10:10:44.933154: step 14, loss = 3.91 (64.5 examples/sec; 3.970 sec/batch)
+2019-04-19 10:10:48.903427: step 15, loss = 3.91 (64.6 examples/sec; 3.964 sec/batch)
+2019-04-19 10:10:52.996961: step 16, loss = 3.91 (62.6 examples/sec; 4.087 sec/batch)
+2019-04-19 10:10:57.111175: step 17, loss = 3.91 (62.3 examples/sec; 4.108 sec/batch)
+2019-04-19 10:11:01.025275: step 18, loss = 3.91 (65.5 examples/sec; 3.907 sec/batch)
+2019-04-19 10:11:04.999821: step 19, loss = 3.91 (64.5 examples/sec; 3.968 sec/batch)
+2019-04-19 10:11:09.192864: step 20, loss = 3.91 (61.2 examples/sec; 4.186 sec/batch)
+2019-04-19 10:11:13.123776: step 21, loss = 3.91 (65.2 examples/sec; 3.924 sec/batch)
+2019-04-19 10:11:17.326998: step 22, loss = 3.91 (61.0 examples/sec; 4.197 sec/batch)
+2019-04-19 10:11:21.488592: step 23, loss = 3.91 (61.6 examples/sec; 4.155 sec/batch)
+2019-04-19 10:11:25.531483: step 24, loss = 3.91 (63.4 examples/sec; 4.036 sec/batch)
+2019-04-19 10:11:29.590727: step 25, loss = 3.91 (63.2 examples/sec; 4.053 sec/batch)
+2019-04-19 10:11:33.551373: step 26, loss = 3.91 (64.7 examples/sec; 3.954 sec/batch)
+2019-04-19 10:11:37.532779: step 27, loss = 3.91 (64.4 examples/sec; 3.975 sec/batch)
+2019-04-19 10:11:41.505924: step 28, loss = 3.91 (64.5 examples/sec; 3.966 sec/batch)
+2019-04-19 10:11:45.390335: step 29, loss = 3.91 (66.0 examples/sec; 3.878 sec/batch)
+2019-04-19 10:11:49.361985: step 30, loss = 3.91 (64.6 examples/sec; 3.965 sec/batch)
+2019-04-19 10:11:53.585039: step 31, loss = 3.91 (60.7 examples/sec; 4.216 sec/batch)
+2019-04-19 10:11:57.498262: step 32, loss = 3.91 (65.5 examples/sec; 3.907 sec/batch)
+2019-04-19 10:12:01.643432: step 33, loss = 3.91 (61.9 examples/sec; 4.139 sec/batch)
+2019-04-19 10:12:05.818094: step 34, loss = 3.91 (61.4 examples/sec; 4.168 sec/batch)
+2019-04-19 10:12:09.771991: step 35, loss = 3.91 (64.9 examples/sec; 3.947 sec/batch)
+2019-04-19 10:12:13.747232: step 36, loss = 3.91 (64.5 examples/sec; 3.969 sec/batch)
+2019-04-19 10:12:17.775739: step 37, loss = 3.91 (63.7 examples/sec; 4.022 sec/batch)
+2019-04-19 10:12:21.753417: step 38, loss = 3.91 (64.5 examples/sec; 3.971 sec/batch)
+2019-04-19 10:12:25.686922: step 39, loss = 3.91 (65.2 examples/sec; 3.927 sec/batch)
+2019-04-19 10:12:29.693169: step 40, loss = 3.91 (64.0 examples/sec; 4.000 sec/batch)
+2019-04-19 10:12:33.735596: step 41, loss = 3.91 (63.4 examples/sec; 4.037 sec/batch)
+2019-04-19 10:12:37.953322: step 42, loss = 3.91 (60.8 examples/sec; 4.211 sec/batch)
+2019-04-19 10:12:41.865046: step 43, loss = 3.91 (65.6 examples/sec; 3.905 sec/batch)
+2019-04-19 10:12:46.058301: step 44, loss = 3.91 (61.1 examples/sec; 4.186 sec/batch)
+2019-04-19 10:12:50.011174: step 45, loss = 3.91 (64.9 examples/sec; 3.946 sec/batch)
+2019-04-19 10:12:53.932579: step 46, loss = 3.91 (65.4 examples/sec; 3.915 sec/batch)
+2019-04-19 10:12:57.869214: step 47, loss = 3.91 (65.1 examples/sec; 3.930 sec/batch)
+Average 63.7 examples/sec

@@ -1,0 +1,18 @@
+
+WARNING: The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+If you depend on functionality not listed there, please file an issue.
+
+Value in main function False
+Input batch shape: images: (384, 256, 256, 3) labels: (384,)
+Value just before calling alexnetmodes False
+num_classes: 1000
+Value inside distribute function : False
+total_num_examples: 12288
+Value of num_replicas inside train function : 0
+fake_data/input_producer/FIFOQueueV2
+fake_data/input_producer_1/FIFOQueueV2
+4 threads started for queue
+2019-04-18 15:15:42.954897: step 0, loss = 14.24 (71.1 examples/sec; 5.402 sec/batch)

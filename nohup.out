@@ -1,0 +1,444 @@
+Warning: Permanently added 'node0,10.10.1.1' (RSA) to the list of known hosts.
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Hit:1 http://us.archive.ubuntu.com/ubuntu xenial InRelease
+Hit:2 http://us.archive.ubuntu.com/ubuntu xenial-updates InRelease
+Hit:3 http://security.ubuntu.com/ubuntu xenial-security InRelease
+Reading package lists...
+Building dependency tree...
+Reading state information...
+194 packages can be upgraded. Run 'apt list --upgradable' to see them.
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+python-dev is already the newest version (2.7.12-1~16.04).
+python-pip is already the newest version (8.1.1-2ubuntu0.4).
+0 upgraded, 0 newly installed, 0 to remove and 194 not upgraded.
+The directory '/users/Maulik/.cache/pip/http' or its parent directory is not owned by the current user and the cache has been disabled. Please check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+The directory '/users/Maulik/.cache/pip' or its parent directory is not owned by the current user and caching wheels has been disabled. check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+Requirement already satisfied (use --upgrade to upgrade): tensorflow in /usr/local/lib/python2.7/dist-packages
+Requirement already satisfied (use --upgrade to upgrade): astor>=0.6.0 in /usr/local/lib/python2.7/dist-packages (from tensorflow)
+Requirement already satisfied (use --upgrade to upgrade): enum34>=1.1.6 in /usr/local/lib/python2.7/dist-packages (from tensorflow)
+Requirement already satisfied (use --upgrade to upgrade): protobuf>=3.6.1 in /usr/local/lib/python2.7/dist-packages (from tensorflow)
+Requirement already satisfied (use --upgrade to upgrade): keras-preprocessing>=1.0.5 in /usr/local/lib/python2.7/dist-packages (from tensorflow)
+Requirement already satisfied (use --upgrade to upgrade): gast>=0.2.0 in /usr/local/lib/python2.7/dist-packages (from tensorflow)
+Requirement already satisfied (use --upgrade to upgrade): six>=1.10.0 in /usr/lib/python2.7/dist-packages (from tensorflow)
+Requirement already satisfied (use --upgrade to upgrade): tensorboard<1.14.0,>=1.13.0 in /usr/local/lib/python2.7/dist-packages (from tensorflow)
+Requirement already satisfied (use --upgrade to upgrade): wheel in /usr/lib/python2.7/dist-packages (from tensorflow)
+Requirement already satisfied (use --upgrade to upgrade): absl-py>=0.1.6 in /usr/local/lib/python2.7/dist-packages (from tensorflow)
+Requirement already satisfied (use --upgrade to upgrade): backports.weakref>=1.0rc1 in /usr/local/lib/python2.7/dist-packages (from tensorflow)
+Requirement already satisfied (use --upgrade to upgrade): termcolor>=1.1.0 in /usr/local/lib/python2.7/dist-packages (from tensorflow)
+Requirement already satisfied (use --upgrade to upgrade): numpy>=1.13.3 in /usr/local/lib/python2.7/dist-packages (from tensorflow)
+Requirement already satisfied (use --upgrade to upgrade): tensorflow-estimator<1.14.0rc0,>=1.13.0 in /usr/local/lib/python2.7/dist-packages (from tensorflow)
+Requirement already satisfied (use --upgrade to upgrade): grpcio>=1.8.6 in /usr/local/lib/python2.7/dist-packages (from tensorflow)
+Requirement already satisfied (use --upgrade to upgrade): mock>=2.0.0 in /usr/local/lib/python2.7/dist-packages (from tensorflow)
+Requirement already satisfied (use --upgrade to upgrade): keras-applications>=1.0.6 in /usr/local/lib/python2.7/dist-packages (from tensorflow)
+Requirement already satisfied (use --upgrade to upgrade): setuptools in /usr/lib/python2.7/dist-packages (from protobuf>=3.6.1->tensorflow)
+Requirement already satisfied (use --upgrade to upgrade): futures>=3.1.1; python_version < "3" in /usr/local/lib/python2.7/dist-packages (from tensorboard<1.14.0,>=1.13.0->tensorflow)
+Requirement already satisfied (use --upgrade to upgrade): markdown>=2.6.8 in /usr/local/lib/python2.7/dist-packages (from tensorboard<1.14.0,>=1.13.0->tensorflow)
+Requirement already satisfied (use --upgrade to upgrade): werkzeug>=0.11.15 in /usr/local/lib/python2.7/dist-packages (from tensorboard<1.14.0,>=1.13.0->tensorflow)
+Requirement already satisfied (use --upgrade to upgrade): pbr>=0.11 in /usr/local/lib/python2.7/dist-packages (from mock>=2.0.0->tensorflow)
+Requirement already satisfied (use --upgrade to upgrade): funcsigs>=1; python_version < "3.3" in /usr/local/lib/python2.7/dist-packages (from mock>=2.0.0->tensorflow)
+Requirement already satisfied (use --upgrade to upgrade): h5py in /usr/local/lib/python2.7/dist-packages (from keras-applications>=1.0.6->tensorflow)
+You are using pip version 8.1.1, however version 19.0.3 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+Warning: Permanently added 'node1,10.10.1.2' (RSA) to the list of known hosts.
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Get:1 http://us.archive.ubuntu.com/ubuntu xenial InRelease [247 kB]
+Get:2 http://security.ubuntu.com/ubuntu xenial-security InRelease [109 kB]
+Get:3 http://us.archive.ubuntu.com/ubuntu xenial-updates InRelease [109 kB]
+Get:4 http://us.archive.ubuntu.com/ubuntu xenial/main amd64 Packages [1,201 kB]
+Get:5 http://us.archive.ubuntu.com/ubuntu xenial/main i386 Packages [1,196 kB]
+Get:6 http://us.archive.ubuntu.com/ubuntu xenial/main Translation-en [568 kB]
+Get:7 http://us.archive.ubuntu.com/ubuntu xenial/restricted amd64 Packages [8,344 B]
+Get:8 http://us.archive.ubuntu.com/ubuntu xenial/restricted i386 Packages [8,684 B]
+Get:9 http://us.archive.ubuntu.com/ubuntu xenial/restricted Translation-en [2,908 B]
+Get:10 http://us.archive.ubuntu.com/ubuntu xenial/universe amd64 Packages [7,532 kB]
+Get:11 http://security.ubuntu.com/ubuntu xenial-security/main amd64 Packages [638 kB]
+Get:12 http://us.archive.ubuntu.com/ubuntu xenial/universe i386 Packages [7,512 kB]
+Get:13 http://us.archive.ubuntu.com/ubuntu xenial/universe Translation-en [4,354 kB]
+Get:14 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 Packages [938 kB]
+Get:15 http://us.archive.ubuntu.com/ubuntu xenial-updates/main i386 Packages [814 kB]
+Get:16 http://us.archive.ubuntu.com/ubuntu xenial-updates/main Translation-en [376 kB]
+Get:17 http://us.archive.ubuntu.com/ubuntu xenial-updates/restricted amd64 Packages [7,616 B]
+Get:18 http://us.archive.ubuntu.com/ubuntu xenial-updates/restricted i386 Packages [7,580 B]
+Get:19 http://us.archive.ubuntu.com/ubuntu xenial-updates/restricted Translation-en [2,272 B]
+Get:20 http://us.archive.ubuntu.com/ubuntu xenial-updates/universe amd64 Packages [745 kB]
+Get:21 http://us.archive.ubuntu.com/ubuntu xenial-updates/universe i386 Packages [683 kB]
+Get:22 http://us.archive.ubuntu.com/ubuntu xenial-updates/universe Translation-en [310 kB]
+Get:23 http://security.ubuntu.com/ubuntu xenial-security/main i386 Packages [530 kB]
+Get:24 http://security.ubuntu.com/ubuntu xenial-security/main Translation-en [261 kB]
+Get:25 http://security.ubuntu.com/ubuntu xenial-security/restricted amd64 Packages [7,204 B]
+Get:26 http://security.ubuntu.com/ubuntu xenial-security/restricted i386 Packages [7,224 B]
+Get:27 http://security.ubuntu.com/ubuntu xenial-security/restricted Translation-en [2,152 B]
+Get:28 http://security.ubuntu.com/ubuntu xenial-security/universe amd64 Packages [433 kB]
+Get:29 http://security.ubuntu.com/ubuntu xenial-security/universe i386 Packages [377 kB]
+Get:30 http://security.ubuntu.com/ubuntu xenial-security/universe Translation-en [175 kB]
+Fetched 29.2 MB in 6s (4,681 kB/s)
+Reading package lists...
+Building dependency tree...
+Reading state information...
+197 packages can be upgraded. Run 'apt list --upgradable' to see them.
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  libpython-all-dev libpython-dev libpython-stdlib libpython2.7-dev python
+  python-all python-all-dev python-minimal python-pip-whl python-setuptools
+  python-wheel python2.7-dev
+Suggested packages:
+  python-doc python-tk python-setuptools-doc
+The following NEW packages will be installed:
+  libpython-all-dev libpython-dev libpython2.7-dev python-all python-all-dev
+  python-dev python-pip python-pip-whl python-setuptools python-wheel
+  python2.7-dev
+The following packages will be upgraded:
+  libpython-stdlib python python-minimal
+3 upgraded, 11 newly installed, 0 to remove and 194 not upgraded.
+Need to get 29.7 MB of archives.
+After this operation, 43.8 MB of additional disk space will be used.
+Get:1 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 python-minimal amd64 2.7.12-1~16.04 [28.1 kB]
+Get:2 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 python amd64 2.7.12-1~16.04 [137 kB]
+Get:3 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libpython-stdlib amd64 2.7.12-1~16.04 [7,768 B]
+Get:4 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libpython2.7-dev amd64 2.7.12-1ubuntu0~16.04.4 [27.8 MB]
+Get:5 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libpython-dev amd64 2.7.12-1~16.04 [7,840 B]
+Get:6 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libpython-all-dev amd64 2.7.12-1~16.04 [1,006 B]
+Get:7 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 python-all amd64 2.7.12-1~16.04 [996 B]
+Get:8 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 python2.7-dev amd64 2.7.12-1ubuntu0~16.04.4 [276 kB]
+Get:9 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 python-dev amd64 2.7.12-1~16.04 [1,186 B]
+Get:10 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 python-all-dev amd64 2.7.12-1~16.04 [1,016 B]
+Get:11 http://us.archive.ubuntu.com/ubuntu xenial-updates/universe amd64 python-pip-whl all 8.1.1-2ubuntu0.4 [1,110 kB]
+Get:12 http://us.archive.ubuntu.com/ubuntu xenial-updates/universe amd64 python-pip all 8.1.1-2ubuntu0.4 [144 kB]
+Get:13 http://us.archive.ubuntu.com/ubuntu xenial/main amd64 python-setuptools all 20.7.0-1 [169 kB]
+Get:14 http://us.archive.ubuntu.com/ubuntu xenial/universe amd64 python-wheel all 0.29.0-1 [48.0 kB]
+debconf: unable to initialize frontend: Dialog
+debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+dpkg-preconfigure: unable to re-open stdin: 
+Fetched 29.7 MB in 0s (31.6 MB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 106958 files and directories currently installed.)
+Preparing to unpack .../python-minimal_2.7.12-1~16.04_amd64.deb ...
+Unpacking python-minimal (2.7.12-1~16.04) over (2.7.11-1) ...
+Processing triggers for man-db (2.7.5-1) ...
+Setting up python-minimal (2.7.12-1~16.04) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 106958 files and directories currently installed.)
+Preparing to unpack .../python_2.7.12-1~16.04_amd64.deb ...
+Unpacking python (2.7.12-1~16.04) over (2.7.11-1) ...
+Preparing to unpack .../libpython-stdlib_2.7.12-1~16.04_amd64.deb ...
+Unpacking libpython-stdlib:amd64 (2.7.12-1~16.04) over (2.7.11-1) ...
+Selecting previously unselected package libpython2.7-dev:amd64.
+Preparing to unpack .../libpython2.7-dev_2.7.12-1ubuntu0~16.04.4_amd64.deb ...
+Unpacking libpython2.7-dev:amd64 (2.7.12-1ubuntu0~16.04.4) ...
+Selecting previously unselected package libpython-dev:amd64.
+Preparing to unpack .../libpython-dev_2.7.12-1~16.04_amd64.deb ...
+Unpacking libpython-dev:amd64 (2.7.12-1~16.04) ...
+Selecting previously unselected package libpython-all-dev:amd64.
+Preparing to unpack .../libpython-all-dev_2.7.12-1~16.04_amd64.deb ...
+Unpacking libpython-all-dev:amd64 (2.7.12-1~16.04) ...
+Selecting previously unselected package python-all.
+Preparing to unpack .../python-all_2.7.12-1~16.04_amd64.deb ...
+Unpacking python-all (2.7.12-1~16.04) ...
+Selecting previously unselected package python2.7-dev.
+Preparing to unpack .../python2.7-dev_2.7.12-1ubuntu0~16.04.4_amd64.deb ...
+Unpacking python2.7-dev (2.7.12-1ubuntu0~16.04.4) ...
+Selecting previously unselected package python-dev.
+Preparing to unpack .../python-dev_2.7.12-1~16.04_amd64.deb ...
+Unpacking python-dev (2.7.12-1~16.04) ...
+Selecting previously unselected package python-all-dev.
+Preparing to unpack .../python-all-dev_2.7.12-1~16.04_amd64.deb ...
+Unpacking python-all-dev (2.7.12-1~16.04) ...
+Selecting previously unselected package python-pip-whl.
+Preparing to unpack .../python-pip-whl_8.1.1-2ubuntu0.4_all.deb ...
+Unpacking python-pip-whl (8.1.1-2ubuntu0.4) ...
+Selecting previously unselected package python-pip.
+Preparing to unpack .../python-pip_8.1.1-2ubuntu0.4_all.deb ...
+Unpacking python-pip (8.1.1-2ubuntu0.4) ...
+Selecting previously unselected package python-setuptools.
+Preparing to unpack .../python-setuptools_20.7.0-1_all.deb ...
+Unpacking python-setuptools (20.7.0-1) ...
+Selecting previously unselected package python-wheel.
+Preparing to unpack .../python-wheel_0.29.0-1_all.deb ...
+Unpacking python-wheel (0.29.0-1) ...
+Processing triggers for man-db (2.7.5-1) ...
+Setting up libpython-stdlib:amd64 (2.7.12-1~16.04) ...
+Setting up python (2.7.12-1~16.04) ...
+Setting up libpython2.7-dev:amd64 (2.7.12-1ubuntu0~16.04.4) ...
+Setting up libpython-dev:amd64 (2.7.12-1~16.04) ...
+Setting up libpython-all-dev:amd64 (2.7.12-1~16.04) ...
+Setting up python-all (2.7.12-1~16.04) ...
+Setting up python2.7-dev (2.7.12-1ubuntu0~16.04.4) ...
+Setting up python-dev (2.7.12-1~16.04) ...
+Setting up python-all-dev (2.7.12-1~16.04) ...
+Setting up python-pip-whl (8.1.1-2ubuntu0.4) ...
+Setting up python-pip (8.1.1-2ubuntu0.4) ...
+Setting up python-setuptools (20.7.0-1) ...
+Setting up python-wheel (0.29.0-1) ...
+The directory '/users/Maulik/.cache/pip/http' or its parent directory is not owned by the current user and the cache has been disabled. Please check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+The directory '/users/Maulik/.cache/pip' or its parent directory is not owned by the current user and caching wheels has been disabled. check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+Collecting tensorflow
+  Downloading https://files.pythonhosted.org/packages/d2/ea/ab2c8c0e81bd051cc1180b104c75a865ab0fc66c89be992c4b20bbf6d624/tensorflow-1.13.1-cp27-cp27mu-manylinux1_x86_64.whl (92.5MB)
+Collecting astor>=0.6.0 (from tensorflow)
+  Downloading https://files.pythonhosted.org/packages/35/6b/11530768cac581a12952a2aad00e1526b89d242d0b9f59534ef6e6a1752f/astor-0.7.1-py2.py3-none-any.whl
+Collecting enum34>=1.1.6 (from tensorflow)
+  Downloading https://files.pythonhosted.org/packages/c5/db/e56e6b4bbac7c4a06de1c50de6fe1ef3810018ae11732a50f15f62c7d050/enum34-1.1.6-py2-none-any.whl
+Collecting protobuf>=3.6.1 (from tensorflow)
+  Downloading https://files.pythonhosted.org/packages/ea/72/5eadea03b06ca1320be2433ef2236155da17806b700efc92677ee99ae119/protobuf-3.7.1-cp27-cp27mu-manylinux1_x86_64.whl (1.2MB)
+Collecting keras-preprocessing>=1.0.5 (from tensorflow)
+  Downloading https://files.pythonhosted.org/packages/c0/bf/0315ef6a9fd3fc2346e85b0ff1f5f83ca17073f2c31ac719ab2e4da0d4a3/Keras_Preprocessing-1.0.9-py2.py3-none-any.whl (59kB)
+Collecting gast>=0.2.0 (from tensorflow)
+  Downloading https://files.pythonhosted.org/packages/4e/35/11749bf99b2d4e3cceb4d55ca22590b0d7c2c62b9de38ac4a4a7f4687421/gast-0.2.2.tar.gz
+Requirement already satisfied (use --upgrade to upgrade): six>=1.10.0 in /usr/lib/python2.7/dist-packages (from tensorflow)
+Collecting tensorboard<1.14.0,>=1.13.0 (from tensorflow)
+  Downloading https://files.pythonhosted.org/packages/89/ac/48dd71c2bdc8d31e367f9b72f25ccb3b89bc6b9d664fee21f9a8efa5714d/tensorboard-1.13.1-py2-none-any.whl (3.2MB)
+Requirement already satisfied (use --upgrade to upgrade): wheel in /usr/lib/python2.7/dist-packages (from tensorflow)
+Collecting absl-py>=0.1.6 (from tensorflow)
+  Downloading https://files.pythonhosted.org/packages/da/3f/9b0355080b81b15ba6a9ffcf1f5ea39e307a2778b2f2dc8694724e8abd5b/absl-py-0.7.1.tar.gz (99kB)
+Collecting backports.weakref>=1.0rc1 (from tensorflow)
+  Downloading https://files.pythonhosted.org/packages/88/ec/f598b633c3d5ffe267aaada57d961c94fdfa183c5c3ebda2b6d151943db6/backports.weakref-1.0.post1-py2.py3-none-any.whl
+Collecting termcolor>=1.1.0 (from tensorflow)
+  Downloading https://files.pythonhosted.org/packages/8a/48/a76be51647d0eb9f10e2a4511bf3ffb8cc1e6b14e9e4fab46173aa79f981/termcolor-1.1.0.tar.gz
+Collecting numpy>=1.13.3 (from tensorflow)
+  Downloading https://files.pythonhosted.org/packages/c4/33/8ec8dcdb4ede5d453047bbdbd01916dbaccdb63e98bba60989718f5f0876/numpy-1.16.2-cp27-cp27mu-manylinux1_x86_64.whl (17.0MB)
+Collecting tensorflow-estimator<1.14.0rc0,>=1.13.0 (from tensorflow)
+  Downloading https://files.pythonhosted.org/packages/bb/48/13f49fc3fa0fdf916aa1419013bb8f2ad09674c275b4046d5ee669a46873/tensorflow_estimator-1.13.0-py2.py3-none-any.whl (367kB)
+Collecting grpcio>=1.8.6 (from tensorflow)
+  Downloading https://files.pythonhosted.org/packages/7c/59/4da8df60a74f4af73ede9d92a75ca85c94bc2a109d5f67061496e8d496b2/grpcio-1.20.0-cp27-cp27mu-manylinux1_x86_64.whl (2.1MB)
+Collecting mock>=2.0.0 (from tensorflow)
+  Downloading https://files.pythonhosted.org/packages/e6/35/f187bdf23be87092bd0f1200d43d23076cee4d0dec109f195173fd3ebc79/mock-2.0.0-py2.py3-none-any.whl (56kB)
+Collecting keras-applications>=1.0.6 (from tensorflow)
+  Downloading https://files.pythonhosted.org/packages/90/85/64c82949765cfb246bbdaf5aca2d55f400f792655927a017710a78445def/Keras_Applications-1.0.7-py2.py3-none-any.whl (51kB)
+Requirement already satisfied (use --upgrade to upgrade): setuptools in /usr/lib/python2.7/dist-packages (from protobuf>=3.6.1->tensorflow)
+Collecting futures>=3.1.1; python_version < "3" (from tensorboard<1.14.0,>=1.13.0->tensorflow)
+  Downloading https://files.pythonhosted.org/packages/2d/99/b2c4e9d5a30f6471e410a146232b4118e697fa3ffc06d6a65efde84debd0/futures-3.2.0-py2-none-any.whl
+Collecting markdown>=2.6.8 (from tensorboard<1.14.0,>=1.13.0->tensorflow)
+  Downloading https://files.pythonhosted.org/packages/f5/e4/d8c18f2555add57ff21bf25af36d827145896a07607486cc79a2aea641af/Markdown-3.1-py2.py3-none-any.whl (87kB)
+Collecting werkzeug>=0.11.15 (from tensorboard<1.14.0,>=1.13.0->tensorflow)
+  Downloading https://files.pythonhosted.org/packages/18/79/84f02539cc181cdbf5ff5a41b9f52cae870b6f632767e43ba6ac70132e92/Werkzeug-0.15.2-py2.py3-none-any.whl (328kB)
+Collecting pbr>=0.11 (from mock>=2.0.0->tensorflow)
+  Downloading https://files.pythonhosted.org/packages/14/09/12fe9a14237a6b7e0ba3a8d6fcf254bf4b10ec56a0185f73d651145e9222/pbr-5.1.3-py2.py3-none-any.whl (107kB)
+Collecting funcsigs>=1; python_version < "3.3" (from mock>=2.0.0->tensorflow)
+  Downloading https://files.pythonhosted.org/packages/69/cb/f5be453359271714c01b9bd06126eaf2e368f1fddfff30818754b5ac2328/funcsigs-1.0.2-py2.py3-none-any.whl
+Collecting h5py (from keras-applications>=1.0.6->tensorflow)
+  Downloading https://files.pythonhosted.org/packages/53/08/27e4e9a369321862ffdce80ff1770553e9daec65d98befb2e14e7478b698/h5py-2.9.0-cp27-cp27mu-manylinux1_x86_64.whl (2.8MB)
+Installing collected packages: astor, enum34, protobuf, numpy, keras-preprocessing, gast, futures, markdown, grpcio, werkzeug, absl-py, tensorboard, backports.weakref, termcolor, pbr, funcsigs, mock, tensorflow-estimator, h5py, keras-applications, tensorflow
+  Found existing installation: enum34 1.1.2
+    Not uninstalling enum34 at /usr/lib/python2.7/dist-packages, outside environment /usr
+  Running setup.py install for gast: started
+    Running setup.py install for gast: finished with status 'done'
+  Running setup.py install for absl-py: started
+    Running setup.py install for absl-py: finished with status 'done'
+  Running setup.py install for termcolor: started
+    Running setup.py install for termcolor: finished with status 'done'
+Successfully installed absl-py-0.7.1 astor-0.7.1 backports.weakref-1.0.post1 enum34-1.1.6 funcsigs-1.0.2 futures-3.2.0 gast-0.2.2 grpcio-1.20.0 h5py-2.9.0 keras-applications-1.0.7 keras-preprocessing-1.0.9 markdown-3.1 mock-2.0.0 numpy-1.16.2 pbr-5.1.3 protobuf-3.7.1 tensorboard-1.13.1 tensorflow-1.13.1 tensorflow-estimator-1.13.0 termcolor-1.1.0 werkzeug-0.15.2
+You are using pip version 8.1.1, however version 19.0.3 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+Warning: Permanently added 'node2,10.10.1.3' (RSA) to the list of known hosts.
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Get:1 http://us.archive.ubuntu.com/ubuntu xenial InRelease [247 kB]
+Get:2 http://security.ubuntu.com/ubuntu xenial-security InRelease [109 kB]
+Get:3 http://us.archive.ubuntu.com/ubuntu xenial-updates InRelease [109 kB]
+Get:4 http://us.archive.ubuntu.com/ubuntu xenial/main amd64 Packages [1,201 kB]
+Get:5 http://us.archive.ubuntu.com/ubuntu xenial/main i386 Packages [1,196 kB]
+Get:6 http://us.archive.ubuntu.com/ubuntu xenial/main Translation-en [568 kB]
+Get:7 http://us.archive.ubuntu.com/ubuntu xenial/restricted amd64 Packages [8,344 B]
+Get:8 http://us.archive.ubuntu.com/ubuntu xenial/restricted i386 Packages [8,684 B]
+Get:9 http://us.archive.ubuntu.com/ubuntu xenial/restricted Translation-en [2,908 B]
+Get:10 http://us.archive.ubuntu.com/ubuntu xenial/universe amd64 Packages [7,532 kB]
+Get:11 http://security.ubuntu.com/ubuntu xenial-security/main amd64 Packages [638 kB]
+Get:12 http://us.archive.ubuntu.com/ubuntu xenial/universe i386 Packages [7,512 kB]
+Get:13 http://us.archive.ubuntu.com/ubuntu xenial/universe Translation-en [4,354 kB]
+Get:14 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 Packages [938 kB]
+Get:15 http://us.archive.ubuntu.com/ubuntu xenial-updates/main i386 Packages [814 kB]
+Get:16 http://us.archive.ubuntu.com/ubuntu xenial-updates/main Translation-en [376 kB]
+Get:17 http://us.archive.ubuntu.com/ubuntu xenial-updates/restricted amd64 Packages [7,616 B]
+Get:18 http://us.archive.ubuntu.com/ubuntu xenial-updates/restricted i386 Packages [7,580 B]
+Get:19 http://us.archive.ubuntu.com/ubuntu xenial-updates/restricted Translation-en [2,272 B]
+Get:20 http://us.archive.ubuntu.com/ubuntu xenial-updates/universe amd64 Packages [745 kB]
+Get:21 http://us.archive.ubuntu.com/ubuntu xenial-updates/universe i386 Packages [683 kB]
+Get:22 http://us.archive.ubuntu.com/ubuntu xenial-updates/universe Translation-en [310 kB]
+Get:23 http://security.ubuntu.com/ubuntu xenial-security/main i386 Packages [530 kB]
+Get:24 http://security.ubuntu.com/ubuntu xenial-security/main Translation-en [261 kB]
+Get:25 http://security.ubuntu.com/ubuntu xenial-security/restricted amd64 Packages [7,204 B]
+Get:26 http://security.ubuntu.com/ubuntu xenial-security/restricted i386 Packages [7,224 B]
+Get:27 http://security.ubuntu.com/ubuntu xenial-security/restricted Translation-en [2,152 B]
+Get:28 http://security.ubuntu.com/ubuntu xenial-security/universe amd64 Packages [433 kB]
+Get:29 http://security.ubuntu.com/ubuntu xenial-security/universe i386 Packages [377 kB]
+Get:30 http://security.ubuntu.com/ubuntu xenial-security/universe Translation-en [175 kB]
+Fetched 29.2 MB in 6s (4,847 kB/s)
+Reading package lists...
+Building dependency tree...
+Reading state information...
+197 packages can be upgraded. Run 'apt list --upgradable' to see them.
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  libpython-all-dev libpython-dev libpython-stdlib libpython2.7-dev python
+  python-all python-all-dev python-minimal python-pip-whl python-setuptools
+  python-wheel python2.7-dev
+Suggested packages:
+  python-doc python-tk python-setuptools-doc
+The following NEW packages will be installed:
+  libpython-all-dev libpython-dev libpython2.7-dev python-all python-all-dev
+  python-dev python-pip python-pip-whl python-setuptools python-wheel
+  python2.7-dev
+The following packages will be upgraded:
+  libpython-stdlib python python-minimal
+3 upgraded, 11 newly installed, 0 to remove and 194 not upgraded.
+Need to get 29.7 MB of archives.
+After this operation, 43.8 MB of additional disk space will be used.
+Get:1 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 python-minimal amd64 2.7.12-1~16.04 [28.1 kB]
+Get:2 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 python amd64 2.7.12-1~16.04 [137 kB]
+Get:3 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libpython-stdlib amd64 2.7.12-1~16.04 [7,768 B]
+Get:4 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libpython2.7-dev amd64 2.7.12-1ubuntu0~16.04.4 [27.8 MB]
+Get:5 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libpython-dev amd64 2.7.12-1~16.04 [7,840 B]
+Get:6 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libpython-all-dev amd64 2.7.12-1~16.04 [1,006 B]
+Get:7 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 python-all amd64 2.7.12-1~16.04 [996 B]
+Get:8 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 python2.7-dev amd64 2.7.12-1ubuntu0~16.04.4 [276 kB]
+Get:9 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 python-dev amd64 2.7.12-1~16.04 [1,186 B]
+Get:10 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 python-all-dev amd64 2.7.12-1~16.04 [1,016 B]
+Get:11 http://us.archive.ubuntu.com/ubuntu xenial-updates/universe amd64 python-pip-whl all 8.1.1-2ubuntu0.4 [1,110 kB]
+Get:12 http://us.archive.ubuntu.com/ubuntu xenial-updates/universe amd64 python-pip all 8.1.1-2ubuntu0.4 [144 kB]
+Get:13 http://us.archive.ubuntu.com/ubuntu xenial/main amd64 python-setuptools all 20.7.0-1 [169 kB]
+Get:14 http://us.archive.ubuntu.com/ubuntu xenial/universe amd64 python-wheel all 0.29.0-1 [48.0 kB]
+debconf: unable to initialize frontend: Dialog
+debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+dpkg-preconfigure: unable to re-open stdin: 
+Fetched 29.7 MB in 0s (31.3 MB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 106958 files and directories currently installed.)
+Preparing to unpack .../python-minimal_2.7.12-1~16.04_amd64.deb ...
+Unpacking python-minimal (2.7.12-1~16.04) over (2.7.11-1) ...
+Processing triggers for man-db (2.7.5-1) ...
+Setting up python-minimal (2.7.12-1~16.04) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 106958 files and directories currently installed.)
+Preparing to unpack .../python_2.7.12-1~16.04_amd64.deb ...
+Unpacking python (2.7.12-1~16.04) over (2.7.11-1) ...
+Preparing to unpack .../libpython-stdlib_2.7.12-1~16.04_amd64.deb ...
+Unpacking libpython-stdlib:amd64 (2.7.12-1~16.04) over (2.7.11-1) ...
+Selecting previously unselected package libpython2.7-dev:amd64.
+Preparing to unpack .../libpython2.7-dev_2.7.12-1ubuntu0~16.04.4_amd64.deb ...
+Unpacking libpython2.7-dev:amd64 (2.7.12-1ubuntu0~16.04.4) ...
+Selecting previously unselected package libpython-dev:amd64.
+Preparing to unpack .../libpython-dev_2.7.12-1~16.04_amd64.deb ...
+Unpacking libpython-dev:amd64 (2.7.12-1~16.04) ...
+Selecting previously unselected package libpython-all-dev:amd64.
+Preparing to unpack .../libpython-all-dev_2.7.12-1~16.04_amd64.deb ...
+Unpacking libpython-all-dev:amd64 (2.7.12-1~16.04) ...
+Selecting previously unselected package python-all.
+Preparing to unpack .../python-all_2.7.12-1~16.04_amd64.deb ...
+Unpacking python-all (2.7.12-1~16.04) ...
+Selecting previously unselected package python2.7-dev.
+Preparing to unpack .../python2.7-dev_2.7.12-1ubuntu0~16.04.4_amd64.deb ...
+Unpacking python2.7-dev (2.7.12-1ubuntu0~16.04.4) ...
+Selecting previously unselected package python-dev.
+Preparing to unpack .../python-dev_2.7.12-1~16.04_amd64.deb ...
+Unpacking python-dev (2.7.12-1~16.04) ...
+Selecting previously unselected package python-all-dev.
+Preparing to unpack .../python-all-dev_2.7.12-1~16.04_amd64.deb ...
+Unpacking python-all-dev (2.7.12-1~16.04) ...
+Selecting previously unselected package python-pip-whl.
+Preparing to unpack .../python-pip-whl_8.1.1-2ubuntu0.4_all.deb ...
+Unpacking python-pip-whl (8.1.1-2ubuntu0.4) ...
+Selecting previously unselected package python-pip.
+Preparing to unpack .../python-pip_8.1.1-2ubuntu0.4_all.deb ...
+Unpacking python-pip (8.1.1-2ubuntu0.4) ...
+Selecting previously unselected package python-setuptools.
+Preparing to unpack .../python-setuptools_20.7.0-1_all.deb ...
+Unpacking python-setuptools (20.7.0-1) ...
+Selecting previously unselected package python-wheel.
+Preparing to unpack .../python-wheel_0.29.0-1_all.deb ...
+Unpacking python-wheel (0.29.0-1) ...
+Processing triggers for man-db (2.7.5-1) ...
+Setting up libpython-stdlib:amd64 (2.7.12-1~16.04) ...
+Setting up python (2.7.12-1~16.04) ...
+Setting up libpython2.7-dev:amd64 (2.7.12-1ubuntu0~16.04.4) ...
+Setting up libpython-dev:amd64 (2.7.12-1~16.04) ...
+Setting up libpython-all-dev:amd64 (2.7.12-1~16.04) ...
+Setting up python-all (2.7.12-1~16.04) ...
+Setting up python2.7-dev (2.7.12-1ubuntu0~16.04.4) ...
+Setting up python-dev (2.7.12-1~16.04) ...
+Setting up python-all-dev (2.7.12-1~16.04) ...
+Setting up python-pip-whl (8.1.1-2ubuntu0.4) ...
+Setting up python-pip (8.1.1-2ubuntu0.4) ...
+Setting up python-setuptools (20.7.0-1) ...
+Setting up python-wheel (0.29.0-1) ...
+The directory '/users/Maulik/.cache/pip/http' or its parent directory is not owned by the current user and the cache has been disabled. Please check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+The directory '/users/Maulik/.cache/pip' or its parent directory is not owned by the current user and caching wheels has been disabled. check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+Collecting tensorflow
+  Downloading https://files.pythonhosted.org/packages/d2/ea/ab2c8c0e81bd051cc1180b104c75a865ab0fc66c89be992c4b20bbf6d624/tensorflow-1.13.1-cp27-cp27mu-manylinux1_x86_64.whl (92.5MB)
+Collecting astor>=0.6.0 (from tensorflow)
+  Downloading https://files.pythonhosted.org/packages/35/6b/11530768cac581a12952a2aad00e1526b89d242d0b9f59534ef6e6a1752f/astor-0.7.1-py2.py3-none-any.whl
+Collecting enum34>=1.1.6 (from tensorflow)
+  Downloading https://files.pythonhosted.org/packages/c5/db/e56e6b4bbac7c4a06de1c50de6fe1ef3810018ae11732a50f15f62c7d050/enum34-1.1.6-py2-none-any.whl
+Collecting protobuf>=3.6.1 (from tensorflow)
+  Downloading https://files.pythonhosted.org/packages/ea/72/5eadea03b06ca1320be2433ef2236155da17806b700efc92677ee99ae119/protobuf-3.7.1-cp27-cp27mu-manylinux1_x86_64.whl (1.2MB)
+Collecting keras-preprocessing>=1.0.5 (from tensorflow)
+  Downloading https://files.pythonhosted.org/packages/c0/bf/0315ef6a9fd3fc2346e85b0ff1f5f83ca17073f2c31ac719ab2e4da0d4a3/Keras_Preprocessing-1.0.9-py2.py3-none-any.whl (59kB)
+Collecting gast>=0.2.0 (from tensorflow)
+  Downloading https://files.pythonhosted.org/packages/4e/35/11749bf99b2d4e3cceb4d55ca22590b0d7c2c62b9de38ac4a4a7f4687421/gast-0.2.2.tar.gz
+Requirement already satisfied (use --upgrade to upgrade): six>=1.10.0 in /usr/lib/python2.7/dist-packages (from tensorflow)
+Collecting tensorboard<1.14.0,>=1.13.0 (from tensorflow)
+  Downloading https://files.pythonhosted.org/packages/89/ac/48dd71c2bdc8d31e367f9b72f25ccb3b89bc6b9d664fee21f9a8efa5714d/tensorboard-1.13.1-py2-none-any.whl (3.2MB)
+Requirement already satisfied (use --upgrade to upgrade): wheel in /usr/lib/python2.7/dist-packages (from tensorflow)
+Collecting absl-py>=0.1.6 (from tensorflow)
+  Downloading https://files.pythonhosted.org/packages/da/3f/9b0355080b81b15ba6a9ffcf1f5ea39e307a2778b2f2dc8694724e8abd5b/absl-py-0.7.1.tar.gz (99kB)
+Collecting backports.weakref>=1.0rc1 (from tensorflow)
+  Downloading https://files.pythonhosted.org/packages/88/ec/f598b633c3d5ffe267aaada57d961c94fdfa183c5c3ebda2b6d151943db6/backports.weakref-1.0.post1-py2.py3-none-any.whl
+Collecting termcolor>=1.1.0 (from tensorflow)
+  Downloading https://files.pythonhosted.org/packages/8a/48/a76be51647d0eb9f10e2a4511bf3ffb8cc1e6b14e9e4fab46173aa79f981/termcolor-1.1.0.tar.gz
+Collecting numpy>=1.13.3 (from tensorflow)
+  Downloading https://files.pythonhosted.org/packages/c4/33/8ec8dcdb4ede5d453047bbdbd01916dbaccdb63e98bba60989718f5f0876/numpy-1.16.2-cp27-cp27mu-manylinux1_x86_64.whl (17.0MB)
+Collecting tensorflow-estimator<1.14.0rc0,>=1.13.0 (from tensorflow)
+  Downloading https://files.pythonhosted.org/packages/bb/48/13f49fc3fa0fdf916aa1419013bb8f2ad09674c275b4046d5ee669a46873/tensorflow_estimator-1.13.0-py2.py3-none-any.whl (367kB)
+Collecting grpcio>=1.8.6 (from tensorflow)
+  Downloading https://files.pythonhosted.org/packages/7c/59/4da8df60a74f4af73ede9d92a75ca85c94bc2a109d5f67061496e8d496b2/grpcio-1.20.0-cp27-cp27mu-manylinux1_x86_64.whl (2.1MB)
+Collecting mock>=2.0.0 (from tensorflow)
+  Downloading https://files.pythonhosted.org/packages/e6/35/f187bdf23be87092bd0f1200d43d23076cee4d0dec109f195173fd3ebc79/mock-2.0.0-py2.py3-none-any.whl (56kB)
+Collecting keras-applications>=1.0.6 (from tensorflow)
+  Downloading https://files.pythonhosted.org/packages/90/85/64c82949765cfb246bbdaf5aca2d55f400f792655927a017710a78445def/Keras_Applications-1.0.7-py2.py3-none-any.whl (51kB)
+Requirement already satisfied (use --upgrade to upgrade): setuptools in /usr/lib/python2.7/dist-packages (from protobuf>=3.6.1->tensorflow)
+Collecting futures>=3.1.1; python_version < "3" (from tensorboard<1.14.0,>=1.13.0->tensorflow)
+  Downloading https://files.pythonhosted.org/packages/2d/99/b2c4e9d5a30f6471e410a146232b4118e697fa3ffc06d6a65efde84debd0/futures-3.2.0-py2-none-any.whl
+Collecting markdown>=2.6.8 (from tensorboard<1.14.0,>=1.13.0->tensorflow)
+  Downloading https://files.pythonhosted.org/packages/f5/e4/d8c18f2555add57ff21bf25af36d827145896a07607486cc79a2aea641af/Markdown-3.1-py2.py3-none-any.whl (87kB)
+Collecting werkzeug>=0.11.15 (from tensorboard<1.14.0,>=1.13.0->tensorflow)
+  Downloading https://files.pythonhosted.org/packages/18/79/84f02539cc181cdbf5ff5a41b9f52cae870b6f632767e43ba6ac70132e92/Werkzeug-0.15.2-py2.py3-none-any.whl (328kB)
+Collecting pbr>=0.11 (from mock>=2.0.0->tensorflow)
+  Downloading https://files.pythonhosted.org/packages/14/09/12fe9a14237a6b7e0ba3a8d6fcf254bf4b10ec56a0185f73d651145e9222/pbr-5.1.3-py2.py3-none-any.whl (107kB)
+Collecting funcsigs>=1; python_version < "3.3" (from mock>=2.0.0->tensorflow)
+  Downloading https://files.pythonhosted.org/packages/69/cb/f5be453359271714c01b9bd06126eaf2e368f1fddfff30818754b5ac2328/funcsigs-1.0.2-py2.py3-none-any.whl
+Collecting h5py (from keras-applications>=1.0.6->tensorflow)
+  Downloading https://files.pythonhosted.org/packages/53/08/27e4e9a369321862ffdce80ff1770553e9daec65d98befb2e14e7478b698/h5py-2.9.0-cp27-cp27mu-manylinux1_x86_64.whl (2.8MB)
+Installing collected packages: astor, enum34, protobuf, numpy, keras-preprocessing, gast, futures, markdown, grpcio, werkzeug, absl-py, tensorboard, backports.weakref, termcolor, pbr, funcsigs, mock, tensorflow-estimator, h5py, keras-applications, tensorflow
+  Found existing installation: enum34 1.1.2
+    Not uninstalling enum34 at /usr/lib/python2.7/dist-packages, outside environment /usr
+  Running setup.py install for gast: started
+    Running setup.py install for gast: finished with status 'done'
+  Running setup.py install for absl-py: started
+    Running setup.py install for absl-py: finished with status 'done'
+  Running setup.py install for termcolor: started
+    Running setup.py install for termcolor: finished with status 'done'
+Successfully installed absl-py-0.7.1 astor-0.7.1 backports.weakref-1.0.post1 enum34-1.1.6 funcsigs-1.0.2 futures-3.2.0 gast-0.2.2 grpcio-1.20.0 h5py-2.9.0 keras-applications-1.0.7 keras-preprocessing-1.0.9 markdown-3.1 mock-2.0.0 numpy-1.16.2 pbr-5.1.3 protobuf-3.7.1 tensorboard-1.13.1 tensorflow-1.13.1 tensorflow-estimator-1.13.0 termcolor-1.1.0 werkzeug-0.15.2
+You are using pip version 8.1.1, however version 19.0.3 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
